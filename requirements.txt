@@ -24,3 +24,4 @@ django-tinymce
 django-rest-framework == 0.1.0
 django-cors-headers == 2.3.0
 django-filter
+rest_framework_simplejwt

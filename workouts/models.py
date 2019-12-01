@@ -4,15 +4,6 @@ from exercises.models import Exercise
 from accounts.models import User
 
 
-class WorkOutParts(models.Model):
-    exercise_related = models.ForeignKey(Exercise, on_delete=models.PROTECT)
-    title = models.CharField(max_length=220)
-    guide = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.title
-
-
 class WorkOut(models.Model):
     CHOICES = (
         ('a', 'AMRAP'),
@@ -37,4 +28,13 @@ class WorkOut(models.Model):
 
     def tag_category(self):
         return self.get_category_display()
-    
+
+
+class WorkOutParts(models.Model):
+    exercise_related = models.ForeignKey(Exercise, on_delete=models.PROTECT)
+    title = models.CharField(max_length=220)
+    guide = models.TextField(blank=True)
+    workout_related= models.ForeignKey(WorkOut, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

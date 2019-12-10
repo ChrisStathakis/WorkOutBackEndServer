@@ -28,7 +28,7 @@ class WorkoutListApiView(ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        if not user:
+        if not user.is_authenticated:
             return WorkOut.objects.filter(public=True)
         user_qs = WorkOut.objects.filter(user_related=user)
         public_qs = WorkOut.objects.filter(public=True, status=True)

@@ -21,7 +21,7 @@ class ExerciseListApiView(ListAPIView):
     serializer_class = ExerciseSerializer
     queryset = Exercise.objects.filter(status=True)
     permission_classes = [AllowAny, ]
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter )
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter)
     filterset_fields = ['category', ]
     search_fields = ['title']
 

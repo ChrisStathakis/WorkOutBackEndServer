@@ -34,7 +34,7 @@ class WorkOutParts(models.Model):
     exercise_related = models.ForeignKey(Exercise, on_delete=models.PROTECT)
     title = models.CharField(max_length=220)
     guide = models.TextField(blank=True)
-    workout_related= models.ForeignKey(WorkOut, on_delete=models.CASCADE)
+    workout_related = models.ForeignKey(WorkOut, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

@@ -145,9 +145,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 5
 }
-
-
 
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'accounts.api.serializers.my_jwt_response_handler',

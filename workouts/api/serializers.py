@@ -9,7 +9,7 @@ class WorkOutSerializer(serializers.ModelSerializer):
         model = WorkOut
         fields = ['status', 'public', 'title', 'category',
                   'duration', 'rounds', 'guide', 'user_related',
-                  'tag_category', 'tag_user', 'detail'
+                  'tag_category', 'tag_user', 'detail', 'id'
             ]
 
 
@@ -19,6 +19,7 @@ class WorkOutCreateSerializer(serializers.Serializer):
         model = WorkOut
         fields = ['status', 'public', 'title', 'category',
                   'duration', 'rounds', 'guide', 'user_related',
+
             ]
 
 

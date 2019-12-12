@@ -13,6 +13,16 @@ class WorkOutSerializer(serializers.ModelSerializer):
             ]
 
 
+class WorkoutDetailSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = WorkOut
+        fields = ['status', 'public', 'title', 'category',
+                  'duration', 'rounds', 'guide', 'user_related',
+                  'tag_category', 'tag_user', 'id', 'tag_parts'
+            ]
+
+
 class WorkOutCreateSerializer(serializers.Serializer):
 
     class Meta:

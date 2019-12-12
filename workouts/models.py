@@ -29,12 +29,15 @@ class WorkOut(models.Model):
     def tag_category(self):
         return self.get_category_display()
 
+    def tag_parts(self):
+        return self.workout_parts.values('id', 'title', 'exercise_related__id', 'exercise_related__title', 'guide')
+
 
 class WorkOutParts(models.Model):
     exercise_related = models.ForeignKey(Exercise, on_delete=models.PROTECT)
     title = models.CharField(max_length=220)
     guide = models.TextField(blank=True)
-    workout_related = models.ForeignKey(WorkOut, on_delete=models.CASCADE)
+    workout_related = models.ForeignKey(WorkOut, on_delete=models.CASCADE, related_name='workout_parts')
 
     def __str__(self):
         return self.title

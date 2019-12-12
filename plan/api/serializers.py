@@ -24,7 +24,7 @@ class PlannerWorkoutSerializer(serializers.ModelSerializer):
     class Meta:
         model = PlannerWorkOut
         fields = ['workout', 'planner_related', 'tag_workout', 'tag_planner_related',
-                  'is_done', 'id'
+                  'is_done', 'id', 'url'
                   ]
 
 

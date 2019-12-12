@@ -13,7 +13,7 @@ SECRET_KEY = 'l1#c@s2*#_e9jbfr=d32@6pwxw%qd7^v4zbc7l%24oa8jzw-n#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-REAL_DB = False
+REAL_DB = True
 
 ALLOWED_HOSTS = ['*']
 

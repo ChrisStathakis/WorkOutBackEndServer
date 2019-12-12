@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework import permissions
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
-from .serializers import WorkOutPartSerializer, WorkOutSerializer, WorkOutCreateSerializer
+from .serializers import WorkOutPartSerializer, WorkOutSerializer, WorkOutCreateSerializer, WorkoutDetailSerializer
 
 from ..models import WorkOut, WorkOutParts
 from .permissions import IsOwnerOrReadOnly
@@ -44,7 +44,7 @@ class WorkOutCreateApiView(CreateAPIView):
 
 
 class WorkOutUpdateDeleteRetrieveApiView(RetrieveUpdateDestroyAPIView):
-    serializer_class = WorkOutSerializer
+    serializer_class = WorkoutDetailSerializer
     permission_classes = [IsOwnerOrReadOnly, ]
 
     def get_queryset(self):

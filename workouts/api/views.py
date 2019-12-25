@@ -25,6 +25,9 @@ class WorkoutListApiView(ListAPIView):
     serializer_class = WorkOutSerializer
     queryset = WorkOut.objects.all()
     permission_classes = [IsOwnerOrReadOnly, ]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['category', 'status', 'public', ]
+    search_fields = ['title', 'guide']
 
     def get_queryset(self):
         user = self.request.user
